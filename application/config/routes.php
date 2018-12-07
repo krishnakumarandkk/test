@@ -50,8 +50,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | my-controller/my-method -> my_controller/my_method
 */
 
+
+$route['profile'] = 'profile/index';
+
 $route['used-books/(:any)'] = 'listing/index/$1';
 $route['used-books'] = 'listing/index';
+
+$route['contact-us'] = 'contact/index';
+
 $route['add-book-image/(:any)'] = 'reglog/addimage/$1';
 $route['add-book'] = 'reglog/addbook';
 $route['register'] = 'reglog/index';

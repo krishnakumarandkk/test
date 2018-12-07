@@ -24,7 +24,7 @@ class Reglog extends CI_Controller {
 		}
 		$this->load->helper(array('form'));
         $this->load->library('form_validation');
-		$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[5]');
 		$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password]');
 		
