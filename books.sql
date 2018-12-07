@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 28, 2018 at 05:45 PM
+-- Generation Time: Dec 07, 2018 at 03:29 PM
 -- Server version: 10.0.36-MariaDB-0ubuntu0.16.04.1
 -- PHP Version: 7.0.32-4+ubuntu16.04.1+deb.sury.org+1
 
@@ -101,6 +101,26 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 (27, 'Sports & Outdoors'),
 (28, 'Teen & Young Adult'),
 (29, 'Travel');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `email`, `message`, `created_at`) VALUES
+(1, 'wretrwet@kmail.com', 'test this message', '2018-12-03 14:54:36');
 
 -- --------------------------------------------------------
 
@@ -837,7 +857,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `status`, `email_verified`, `created`) VALUES
-(2, 'test@gmail.com', 'MTIzNDU2', 1, 0, '2018-11-26 14:59:31');
+(2, 'test@gmail.com', 'dGVzdDEyMw==', 1, 0, '2018-11-26 14:59:31'),
+(3, '', 'MTIzNDU2', 0, 0, '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -853,6 +874,12 @@ ALTER TABLE `books`
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -888,6 +915,11 @@ ALTER TABLE `books`
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `states`
 --
 ALTER TABLE `states`
@@ -896,7 +928,7 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
